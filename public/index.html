@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>La Hora Master</title>
+  <style>
+    body{margin:0;font-family:sans-serif;text-align:center;color:#fff;
+      background:linear-gradient(#ff9900,#ff3300) fixed}
+    .logo{margin:60px 0 30px}
+    .player{display:inline-flex;align-items:center;gap:14px;
+      padding:16px 24px;border:2px solid #3a1b00;border-radius:14px;
+      background:rgba(0,0,0,.15)}
+    button{width:44px;height:44px;border-radius:50%;border:none;cursor:pointer}
+    .credit{margin:30px 0 60px;color:#180d00;opacity:.8}
+  </style>
+</head>
+<body>
+  <div class="logo">
+    <img src="LHM-Logo.png" alt="La Hora Master" width="300" />
+  </div>
+
+  <div class="player">
+    <button id="play">▶</button>
+    <button id="pause">⏸</button>
+    <strong>La Hora Master</strong>
+  </div>
+
+  <div class="credit">creado por JUAN BECERRA</div>
+
+  <audio id="radio" preload="none">
+    <!-- Usamos el proxy HTTPS propio -->
+    <source src="/radio" type="audio/mpeg" />
+    Tu navegador no soporta audio en HTML5.
+  </audio>
+
+  <script>
+    const a = document.getElementById("radio");
+    document.getElementById("play").onclick = () => a.play();
+    document.getElementById("pause").onclick = () => a.pause();
+  </script>
+</body>
+</html>
